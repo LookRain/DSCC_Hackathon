@@ -18,7 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', function () {
-    return view('layouts.master');
+Route::get('/survey', function () {
+    return view('survey');
 });
+Route::get('/past', function () {
+    return view('past');
+});
+
+Route::post('/submit', 'SurveyController@send');
+
 Route::get('/profile/{user}', 'UsersController@index');

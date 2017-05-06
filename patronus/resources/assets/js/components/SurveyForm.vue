@@ -10,7 +10,7 @@
 
 <script>
 	// import SF from './SF.js';
-	import SurveyController from './SurveyController.js';
+	// import SurveyController from './SurveyController.js';
 
 	export default {
 

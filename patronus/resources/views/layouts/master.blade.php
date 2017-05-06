@@ -13,18 +13,19 @@
 
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  
+
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
     folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.css">
+      <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css">
 
     <script>
       window.Laravel = {!! json_encode([
@@ -36,7 +37,7 @@
 
     <body class="hold-transition skin-blue sidebar-mini">
    
-      <div id="app">
+
         <div class="wrapper">
           <header class="main-header">
             <!-- Logo -->
@@ -122,18 +123,18 @@
               <li class="header">MAIN NAVIGATION</li>
 
               <li>
-                <router-link to="/" exact>
+                <a href="/survey">
                   <i class="fa fa-dashboard"></i> <span>Survey</span>
 
-                </router-link>
+                </a>
 
               </li>
 
               <li>
-               <router-link to="/past">
+               <a href="/past">
                 <i class="fa fa-dashboard"></i> <span>Past Results</span>
                 
-              </router-link>
+              </a>
               
             </li>
 
@@ -144,7 +145,8 @@
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-       <router-view></router-view>
+
+    @yield('content')
       </div>
 
 
@@ -155,12 +157,14 @@
       </div>
       <!-- ./wrapper -->
       <!-- jQuery 2.2.3 -->
-    </div>
+
 
     <script src="/js/app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://surveyjs.azureedge.net/0.12.12/survey.jquery.min.js"></script>
-<script src="/js/surveyController.js"></script>
+
+{{-- <script src="https://surveyjs.azureedge.net/0.12.12/survey.vue.min.js"></script> --}}
+{{-- <script src="https://surveyjs.azureedge.net/0.12.12/survey.jquery.min.js"></script> --}}
+{{-- <script src="/js/surveyController.js"></script> --}}
    {{--  <script src="plugins/jQuery/jquery-2.2.3.min.js"></script> --}}
     <!-- Bootstrap 3.3.6 -->
     {{-- <script src="bootstrap/js/bootstrap.min.js"></script> --}}
