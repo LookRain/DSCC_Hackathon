@@ -18,9 +18,9 @@ class Errors {
     /**
      * Create a new Errors instance.
      */
-    constructor() {
-        this.errors = {};
-    }
+     constructor() {
+     	this.errors = {};
+     }
 
 
     /**
@@ -28,17 +28,17 @@ class Errors {
      *
      * @param {string} field
      */
-    has(field) {
-        return this.errors.hasOwnProperty(field);
-    }
+     has(field) {
+     	return this.errors.hasOwnProperty(field);
+     }
 
 
     /**
      * Determine if we have any errors.
      */
-    any() {
-        return Object.keys(this.errors).length > 0;
-    }
+     any() {
+     	return Object.keys(this.errors).length > 0;
+     }
 
 
     /**
@@ -46,11 +46,11 @@ class Errors {
      *
      * @param {string} field
      */
-    get(field) {
-        if (this.errors[field]) {
-            return this.errors[field][0];
-        }
-    }
+     get(field) {
+     	if (this.errors[field]) {
+     		return this.errors[field][0];
+     	}
+     }
 
 
     /**
@@ -58,9 +58,9 @@ class Errors {
      *
      * @param {object} errors
      */
-    record(errors) {
-        this.errors = errors;
-    }
+     record(errors) {
+     	this.errors = errors;
+     }
 
 
     /**
@@ -68,59 +68,59 @@ class Errors {
      *
      * @param {string|null} field
      */
-    clear(field) {
-        if (field) {
-            delete this.errors[field];
+     clear(field) {
+     	if (field) {
+     		delete this.errors[field];
 
-            return;
-        }
+     		return;
+     	}
 
-        this.errors = {};
-    }
-}
+     	this.errors = {};
+     }
+ }
 
 
-class Form {
+ class Form {
     /**
      * Create a new Form instance.
      *
      * @param {object} data
      */
-    constructor(data) {
-        this.originalData = data;
+     constructor(data) {
+     	this.originalData = data;
 
-        for (let field in data) {
-            this[field] = data[field];
-        }
+     	for (let field in data) {
+     		this[field] = data[field];
+     	}
 
-        this.errors = new Errors();
-    }
+     	this.errors = new Errors();
+     }
 
 
     /**
      * Fetch all relevant data for the form.
      */
-    data() {
-        let data = {};
+     data() {
+     	let data = {};
 
-        for (let property in this.originalData) {
-            data[property] = this[property];
-        }
+     	for (let property in this.originalData) {
+     		data[property] = this[property];
+     	}
 
-        return data;
-    }
+     	return data;
+     }
 
 
     /**
      * Reset the form fields.
      */
-    reset() {
-        for (let field in this.originalData) {
-            this[field] = '';
-        }
+     reset() {
+     	for (let field in this.originalData) {
+     		this[field] = '';
+     	}
 
-        this.errors.clear();
-    }
+     	this.errors.clear();
+     }
 
 
     /**
@@ -128,9 +128,9 @@ class Form {
      * .
      * @param {string} url
      */
-    post(url) {
-        return this.submit('post', url);
-    }
+     post(url) {
+     	return this.submit('post', url);
+     }
 
 
     /**
@@ -138,9 +138,9 @@ class Form {
      * .
      * @param {string} url
      */
-    put(url) {
-        return this.submit('put', url);
-    }
+     put(url) {
+     	return this.submit('put', url);
+     }
 
 
     /**
@@ -148,9 +148,9 @@ class Form {
      * .
      * @param {string} url
      */
-    patch(url) {
-        return this.submit('patch', url);
-    }
+     patch(url) {
+     	return this.submit('patch', url);
+     }
 
 
     /**
@@ -158,9 +158,9 @@ class Form {
      * .
      * @param {string} url
      */
-    delete(url) {
-        return this.submit('delete', url);
-    }
+     delete(url) {
+     	return this.submit('delete', url);
+     }
 
 
     /**
@@ -169,21 +169,21 @@ class Form {
      * @param {string} requestType
      * @param {string} url
      */
-    submit(requestType, url) {
-        return new Promise((resolve, reject) => {
-            axios[requestType](url, this.data())
-                .then(response => {
-                    this.onSuccess(response.data);
+     submit(requestType, url) {
+     	return new Promise((resolve, reject) => {
+     		axios[requestType](url, this.data())
+     		.then(response => {
+     			this.onSuccess(response.data);
 
-                    resolve(response.data);
-                })
-                .catch(error => {
-                    this.onFail(error.response.data);
+     			resolve(response.data);
+     		})
+     		.catch(error => {
+     			this.onFail(error.response.data);
 
-                    reject(error.response.data);
-                });
-        });
-    }
+     			reject(error.response.data);
+     		});
+     	});
+     }
 
 
     /**
@@ -191,7 +191,7 @@ class Form {
      *
      * @param {object} data
      */
-    onSuccess(data) {
+     onSuccess(data) {
         alert(data.message); // temporary
 
         this.reset();
@@ -203,26 +203,45 @@ class Form {
      *
      * @param {object} errors
      */
-    onFail(errors) {
-        this.errors.record(errors);
-    }
-}
+     onFail(errors) {
+     	this.errors.record(errors);
+     }
+ }
 
 
-new Vue({
-    el: '#survey',
+ new Vue({
+ 	el: '#survey',
 
-    data: {
-        form: new Form({
-            name: '',
-            description: ''
-        })
-    },
+ 	data: {
+ 		form: new Form({
+ 			field1: '',
+ 			field2: '',
+ 			field3: '',
+ 			field4: '',
+ 			field5: '',
+ 			field6: '',
+ 			field7: '',
+ 			field8: '',
+ 			field9: '',
+ 			field10: '',
+ 			field11: '',
+ 			field12: '',
+ 			field13: '',
+ 			field14: '',
+ 			field15: '',
+ 			field16: '',
+ 			field17: '',
+ 			field18: '',
+ 			field19: '',
+ 	
+ 		})
+ 	},
 
-    methods: {
-        onSubmit() {
-            this.form.post('/submit')
-                .then(response => alert('Wahoo!'));
-        }
-    }
-});
+ 	methods: {
+ 		onSubmit() {
+ 			this.form.post('/submit')
+ 			.then(response => alert('Wahoo!'));
+ 		}
+ 	}
+ });
+
