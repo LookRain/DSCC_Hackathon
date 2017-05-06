@@ -12,4 +12,7 @@ const { mix } = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+   .js('resources/assets/js/panel.js', 'public/js')
+   .js('resources/assets/js/jquery-2.2.3.min.js', 'public/js')
+   .js('resources/assets/js/bootstrap.min.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');

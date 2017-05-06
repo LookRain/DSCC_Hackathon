@@ -1,23 +1,34 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Home Page</div>
+  <div>
+   <section class="content-header">
+      <h1>
+        Survey
+        <small>Please answer the questions</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Survey</li>
+    </ol>
+</section>
 
-                    <div class="panel-body">
-                        I'm an example component!
-                    </div>
-                </div>
-            </div>
+<section class="content">
+ 
+  
+  
+  
+  <div class="row">
+    <div class="col-xs-12">
+       
+      <div class="box box-solid">
+        <div class="box-header">
+
         </div>
     </div>
+</div>
+</div>
+
+</section>
+</div>
 </template>
 
-<script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
-    }
-</script>
+
