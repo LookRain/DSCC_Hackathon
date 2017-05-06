@@ -35,6 +35,7 @@
     </head>
 
     <body class="hold-transition skin-blue sidebar-mini">
+   
       <div id="app">
         <div class="wrapper">
           <header class="main-header">
@@ -155,8 +156,12 @@
       <!-- ./wrapper -->
       <!-- jQuery 2.2.3 -->
     </div>
+
     <script src="/js/app.js"></script>
-    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://surveyjs.azureedge.net/0.12.12/survey.jquery.min.js"></script>
+<script src="/js/surveyController.js"></script>
+   {{--  <script src="plugins/jQuery/jquery-2.2.3.min.js"></script> --}}
     <!-- Bootstrap 3.3.6 -->
     {{-- <script src="bootstrap/js/bootstrap.min.js"></script> --}}
     <!-- FastClick -->
