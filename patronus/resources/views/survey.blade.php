@@ -27,7 +27,7 @@
 	
 						<form method="POST" action="/projects" @submit.prevent="onSubmit">
 							<div class="control">
-								<label for="field1">1. On a scale from 1(best) - 5(worst), how happy are you?:</label>
+								<label for="field1">1. On a scale from 1(best) - 5(worst), how health are you?:</label>
 
 								<input type="number" id="field1" name="field1" class="input" v-model="form.field1"> 
 

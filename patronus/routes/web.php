@@ -21,9 +21,11 @@ Auth::routes();
 Route::get('/survey', function () {
     return view('survey');
 });
-Route::get('/past', function () {
-    return view('past');
-});
+// Route::get('/past', function () {
+//     return view('past');
+// });
+
+Route::get('/past', 'SurveyController@history');
 
 Route::post('/submit', 'SurveyController@send');
 

@@ -68,7 +68,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ 37:
+/***/ 13:
 /***/ (function(module, exports) {
 
 /*! AdminLTE app.js
@@ -831,7 +831,7 @@ function _init() {
 /***/ 44:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(37);
+module.exports = __webpack_require__(13);
 
 
 /***/ })

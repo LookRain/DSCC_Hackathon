@@ -119,7 +119,7 @@ class Errors {
      		this[field] = '';
      	}
 
-     	this.errors.clear();
+     
      }
 
 
@@ -192,9 +192,8 @@ class Errors {
      * @param {object} data
      */
      onSuccess(data) {
-        alert(data.message); // temporary
+        console.log("Submitted successfully!"); // temporary
 
-        this.reset();
     }
 
 
@@ -240,7 +239,7 @@ class Errors {
  	methods: {
  		onSubmit() {
  			this.form.post('/submit')
- 			.then(response => alert('Wahoo!'));
+ 			.then(response => alert('Submitted Successfully!'));
  		}
  	}
  });
